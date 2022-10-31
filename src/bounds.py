@@ -40,6 +40,6 @@ def upper_bound(x: list[int], v: int) -> int:
     for i in x: 
         if v >= i:
             value = i
-
-    return value
+        return value
+    return len(x)
     # FIXME: Obviously the answer isn't always 0
