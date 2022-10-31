@@ -24,22 +24,29 @@ def lower_bound(x: list[int], v: int) -> int:
     #    if x[g] == v: 
     #            return x[g]
 
-    for i in x: 
-        if v <= i:
+    for i in range(len(x)): 
+        if v <= x[i]:
             return i 
 
     return len(x)  # FIXME: Obviously the answer isn't always 0
 
+x = [1,2,3,4,5,6]
+v = 8
 
 def upper_bound(x: list[int], v: int) -> int:
     """Get the index of the upper bound of v in x.
 
     If all values in x are smaller than v, return len(x).
     """
-
-    for i in x: 
-        if v >= i:
+    value = 0
+    for i in range(len(x)): 
+        if v >= x[i]:
             value = i
-        return value
-    return len(x)
+    if value != 0: 
+        return value 
+    else: 
+        return 0
+
     # FIXME: Obviously the answer isn't always 0
+
+print(upper_bound(x,v))
