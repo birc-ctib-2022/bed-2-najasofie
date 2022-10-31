@@ -30,9 +30,6 @@ def lower_bound(x: list[int], v: int) -> int:
 
     return len(x)  # FIXME: Obviously the answer isn't always 0
 
-x = [1,2,3,4,5,6]
-v = 8
-
 def upper_bound(x: list[int], v: int) -> int:
     """Get the index of the upper bound of v in x.
 
@@ -48,5 +45,3 @@ def upper_bound(x: list[int], v: int) -> int:
         return 0
 
     # FIXME: Obviously the answer isn't always 0
-
-print(upper_bound(x,v))
