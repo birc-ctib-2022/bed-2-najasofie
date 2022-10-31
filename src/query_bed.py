@@ -21,7 +21,7 @@ def extract_region(features: list[BedLine],
     for i in range(len(features)):
         lst.append(features[i][1])
     low = lower_bound(lst, start)
-    up = upper_bound(lst, end+1)
+    up = upper_bound(lst, end)
 
 
     #for i in range(len(features)):
