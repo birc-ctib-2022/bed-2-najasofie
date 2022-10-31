@@ -34,21 +34,22 @@ def merge(f1: list[BedLine], f2: list[BedLine], outfile: TextIO) -> None:
     # FIXME: I have work to do here!
     i1 = 0 
     i2 = 0
-    x = []
     while i1 < len(f1) and i2 < len(f1):
         if f1[i1][0] <=  f2[i2][0] and f1[i1][1] <=  f2[i2][1]:
-            x.append(f1[i1])
+            print_line(f1[i1], outfile)
             i1 += 1 
         else: 
-            x.append(f2[i2])
+            print_line(f2[i2], outfile)
             i2 += 1
     
-    x.extend(f1[i1:])
-    x.extend(f2[i2:])
+    if f1[i1:] != []: 
+        for line in f1[i1:]:
+            print_line(line, outfile)
+    else: 
+        for line in f2[i2:]:
+            print_line(line, outfile)
     
-    #with open(outfile,"w") as f:
-    #    f.write(x)
-    #return f 
+    return outfile 
 
 
 def main() -> None:
