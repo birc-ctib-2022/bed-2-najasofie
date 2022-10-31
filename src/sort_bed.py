@@ -20,7 +20,6 @@ def sort_file(table: Table) -> None:
         # FIXME: sort `features`
         features.sort(key = get_start)
         table[chrom] = features  # features should be sorted here
-        return table
 
 #print(sort_file([
 #        BedLine(chrom='chr1', chrom_start=20100, chrom_end=20101, name='foo'),
