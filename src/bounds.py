@@ -5,8 +5,6 @@ Unlike in the BED functionality, where we need to search for a lower bound in
 a list of features, here we only concern ourselves with lists of integers.
 """
 
-x = [1,2,3,4,5,6,7,8,9]
-v = 4
 
 def lower_bound(x: list[int], v: int) -> int:
     """Get the index of the lower bound of v in x.
@@ -32,9 +30,6 @@ def lower_bound(x: list[int], v: int) -> int:
 
     return len(x)  # FIXME: Obviously the answer isn't always 0
 
-print(lower_bound(x,v))
-
-v = 7
 
 def upper_bound(x: list[int], v: int) -> int:
     """Get the index of the upper bound of v in x.
@@ -48,5 +43,3 @@ def upper_bound(x: list[int], v: int) -> int:
 
     return value
     # FIXME: Obviously the answer isn't always 0
-
-#print(upper_bound(x,v))
