@@ -21,11 +21,6 @@ def sort_file(table: Table) -> None:
         features.sort(key = get_start)
         table[chrom] = features  # features should be sorted here
 
-#print(sort_file([
-#        BedLine(chrom='chr1', chrom_start=20100, chrom_end=20101, name='foo'),
-#        BedLine(chrom='chr1', chrom_start=600, chrom_end=601, name='baz')
-#        ]))
-
 
 def print_file(table: Table, outfile: TextIO) -> None:
     """Write the content of table to outfile."""
