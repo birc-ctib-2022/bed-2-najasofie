@@ -60,7 +60,23 @@ Once you have implemented a lower bound search for the start of the range, imple
 
 *How do you use binary search to find the lower bound of a number? How did you have to modify the binary search algorithm?*
 
+#first we make a upper (len(x) and lower bound (0). Every time we geuss at the middel index, if the index value is lower than the value, we increase the lower bound to the index value, else we decrease the upper bound to the index value. continues until the lower bound is no lower smaller than the upper bound, then return the lower bound. 
+
+Normaly we stop when the mid value is equal to some specific value (value of interest), but here we loop ontil the lower and upper bound is equal to each other. 
+
+
+
 *Would anything be more difficult if the features covered ranges instead of single nucleotides (like real BED files)? What could go wrong, if anything?*
+
+#We would have to change oure upper bound function and have to it in to anacount in many of the other functions. Because else we would get lines printed were the start position were within the index, but the end position was outside. 
+
+
+
 
 *We wrote a tool for merging two BED files, but what if we had a bunch of them? What would the complexity be if we merged them in, one at a time? What would the complexity be if we merged all of the files at the same time?*
 
+The complexity for merging one BED files at a time is n+m times the amount of files (k), (((m+n)^k) writen as O(n*k)) 
+
+By merging the files at the same time it would take the same time as before, because the amout of comparisons is the same over all.  
+
+Another way is merge sort which is O(n*log(n)). 

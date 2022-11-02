@@ -13,7 +13,6 @@ from bounds import (
     )
 
 
-
 def extract_region(features: list[BedLine],
                    start: int, end: int) -> list[BedLine]:
     """Extract region chrom[start:end] and write it to outfile."""

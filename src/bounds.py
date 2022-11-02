@@ -12,7 +12,7 @@ def lower_bound(x: list[int], v: int) -> int:
     If all values in x are smaller than v, return len(x).
     """
     
-    low = 0 
+    low = 0
     up = len(x)
     while low < up:
         g = (low + up) // 2
