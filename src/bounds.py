@@ -12,34 +12,33 @@ def lower_bound(x: list[int], v: int) -> int:
     If all values in x are smaller than v, return len(x).
     """
     
-    #low = 0 
-    #up = len(x) 
-    #while True:
-    #    g = (low + up)//2 
-    #    if x[g] == v:
-    #        return x[g]
-    #    if x[g] > v:
-    #        up = x[g]
-    #    elif x[g] < v:
-    #        low = x[g]
+    low = 0 
+    up = len(x)
+    while low < up:
+        g = (low + up) // 2
+        if x[g] < v:
+            low = g + 1
+        else:
+            up = g
+    return low
 
 
 
-    for i in range(len(x)): 
-        if v <= x[i]:
-            return i 
 
-    return len(x)  # FIXME: Obviously the answer isn't always 0
+    #for i in range(len(x)): 
+    #    if v <= x[i]:
+    #        return i 
+
+    #return len(x)  # FIXME: Obviously the answer isn't always 0
+
+
 
 def upper_bound(x: list[int], v: int) -> int:
     """Get the index of the upper bound of v in x.
 
     If all values in x are smaller than v, return len(x).
     """
-    value = 0
-    for i in range(len(x)): 
-        if v >= x[i]:
-            value = i
-    return value +1
+    return lower_bound(x, v+1)
 
     # FIXME: Obviously the answer isn't always 0
+
