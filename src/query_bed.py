@@ -13,15 +13,15 @@ from bounds import (
     )
 
 
+
 def extract_region(features: list[BedLine],
                    start: int, end: int) -> list[BedLine]:
     """Extract region chrom[start:end] and write it to outfile."""
     lst = []
-    result = []
     for i in range(len(features)):
         lst.append(features[i][1])
     low = lower_bound(lst, start)
-    up = upper_bound(lst, end)
+    up = lower_bound(lst, end)
 
 
     #for i in range(len(features)):
