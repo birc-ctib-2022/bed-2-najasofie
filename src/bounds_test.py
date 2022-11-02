@@ -13,7 +13,6 @@ def test_bounds() -> None:
     """
     x = [randint(0, 5) for _ in range(10)]
     x.sort()
-    print(x)
     for i in range(10):
         query = x[lower_bound(x, i):upper_bound(x, i)]
         for q in query:

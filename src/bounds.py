@@ -14,15 +14,16 @@ def lower_bound(x: list[int], v: int) -> int:
     
     #low = 0 
     #up = len(x) 
-
-    #while True: 
+    #while True:
     #    g = (low + up)//2 
-    #    if v <= x[g]:
+    #    if x[g] == v:
+    #        return x[g]
+    #    if x[g] > v:
     #        up = x[g]
-    #    else: 
+    #    elif x[g] < v:
     #        low = x[g]
-    #    if x[g] == v: 
-    #            return x[g]
+
+
 
     for i in range(len(x)): 
         if v <= x[i]:
@@ -39,9 +40,6 @@ def upper_bound(x: list[int], v: int) -> int:
     for i in range(len(x)): 
         if v >= x[i]:
             value = i
-    if value != 0: 
-        return value 
-    else: 
-        return 0
+    return value +1
 
     # FIXME: Obviously the answer isn't always 0
